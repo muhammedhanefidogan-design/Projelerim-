@@ -240,20 +240,8 @@
         function startNewChat() { currentChat = []; loadCurrentChat(); }
 
         function getBotResponse(m) {
-            if (waitingForBilalConfirm) {
-                if (m.includes("evet") || m.includes("yes") || m.includes("çal")) {
-                    waitingForBilalConfirm = false;
-                    new Audio('bilal.mp3').play().catch(e => alert("Ses dosyası (bilal.mp3) yan klasörde olmalı!"));
-                    return "🔊 Anlaşıldı Başkan! Giriş müziği çalıyor... 👑";
-                } else {
-                    waitingForBilalConfirm = false;
-                    return "Tamamdır kral, çalmıyorum.";
-                }
-            }
-            if (m.includes("bilal")) {
-                waitingForBilalConfirm = true;
-                return "Merhaba Bilal Bey, sanırım bu ses dosyası size ait. Çalmamı ister misiniz? (Evet/Hayır)";
-            }
+           
+           
             if(m.includes("merhaba"))return "Selam kral!";
             if(m.includes("stres"))return "Sakin ol şampiyon. Derin nefes al.";
             if(m.includes("netlerim"))return "Plato dönemindesin. Bol soru çöz.";
